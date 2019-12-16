@@ -259,8 +259,8 @@ BOOL flag = YES;
     }
     while (![_optrStack isEmpty]){
         postfixNotation = [postfixNotation stringByAppendingString:[_optrStack pop]];
-        NSLog(@"后缀表达式：%@",postfixNotation);
     }
+    NSLog(@"后缀表达式：%@",postfixNotation);
     
     //遍历后缀表达式计算结果
     NSUInteger j = 0;// opndDigits 下标（控制每次存到栈中操作数的位数）
@@ -268,7 +268,7 @@ BOOL flag = YES;
         char ch = [postfixNotation characterAtIndex:i];
         NSString *tempChar = [NSString stringWithFormat:@"%c", ch];
         
-        // 遇到运算符则弹出两个操作数
+        //遇到运算符则弹出两个操作数
         NSString *opnd1 = @"";
         NSString *opnd2 = @"";
         
