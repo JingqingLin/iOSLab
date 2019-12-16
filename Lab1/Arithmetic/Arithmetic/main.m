@@ -12,12 +12,15 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Arithmetic *a = [[Arithmetic alloc] init];
-        NSString *expression = @"10/1*7+15-8";
+        NSLog(@"Start!");
+        NSString *expression = @"+10--1/1-8";
         NSString *result = [a ExpressionCalculate: expression];
-        if([result isEqualToString:@"Nah"]){
-            
+        if([result isEqualToString:@"Nah"] || [result isEqualToString:@"字符串不是数学表达式无法计算"]){
+            NSLog(@"%@", result);
         }
-        NSLog(@"%@=%@", expression, result);
+        else{
+            NSLog(@"%@=%@", expression, result);
+        }
     }
     return 0;
 }

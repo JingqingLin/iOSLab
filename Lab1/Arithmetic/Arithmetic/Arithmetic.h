@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)Stack *opndStack;
 
 -(NSArray *)validOperator;
+-(NSArray *)validNumber;
 //栈内优先级
 -(NSDictionary *)inStackPriority;
 //栈外优先级
@@ -27,8 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)isLegal:(NSString*)str;
 //判断当前字符是不是运算符
 -(BOOL)isOperator:(NSString*)str;
-//判断当前字符是不是操作数
-//-(BOOL)isNumberic:(NSString *)str;
+//判断当前字符是不是阿拉伯数字
+-(BOOL)isNumber:(NSString*)str;
 //比较运算符优先级大小
 -(NSString *)comparePriority:(NSString *)inOptr outOptr:(NSString *)outOptr;
 //二元运算
