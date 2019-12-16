@@ -10,13 +10,13 @@
 
 @implementation Stack
 
-NSUInteger const size = 500;
-
+//size??
 //实例变量带参数的构造方法
 -(instancetype)initWithSize:(NSUInteger)size{
     self = [super init];
     if(self){
         self.stackArray = [[NSMutableArray alloc]initWithCapacity:size];
+        self.size = size;
     }
     return self;
 }
@@ -26,13 +26,11 @@ NSUInteger const size = 500;
 }
 
 -(BOOL)push:(NSString *) obj{
-    if (self.stackArray.count == size)
-    {
+    if (self.stackArray.count == self.size){
         NSLog(@"Stack is full.");
         return NO;
     }
-    else
-    {
+    else{
         [self.stackArray addObject:obj];
         return YES;
     }

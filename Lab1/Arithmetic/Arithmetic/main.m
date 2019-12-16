@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Arithmetic.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
+        Arithmetic *h = [[Arithmetic alloc] init];
+        NSString *expression = @"10/1*7+15/8-8";
+        NSString *result = [h ExpressionCalculate: expression];
+        NSLog(@"%@", result);
     }
     return 0;
 }

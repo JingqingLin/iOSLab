@@ -10,15 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSUInteger const size;
 
 @interface Stack: NSObject
 
 @property(nonatomic, retain)NSMutableArray *stackArray;
 @property(nonatomic, retain)NSString *top;
+@property(nonatomic) NSUInteger size;
 
--(instancetype)initWithSize:(NSUInteger) size;
--(BOOL)push:(NSString *) obj;
+-(instancetype)initWithSize:(NSUInteger)size;
+-(BOOL)push:(NSString *)obj;
 -(NSString *)pop;
 -(NSString *)top;
 -(BOOL)isEmpty;
