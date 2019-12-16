@@ -43,7 +43,7 @@
     
     NSInteger isp = [inPriority integerValue];
     NSInteger icp = [outPriority integerValue];//栈外
-    
+
     if (isp > icp)
         return @">";
     else if (isp < icp)
@@ -84,30 +84,36 @@
     }
     _optrSize = _optrArray.count;
     _optrStack = [[Stack alloc]initWithSize:_optrSize];
+    _postfixStack = [[Stack alloc]initWithSize:inputString.length];
     
     NSString *postfixNotation = @"";
+    NSMutableArray *opndDigits = [NSMutableArray array];
     //前缀转后缀
     for (NSUInteger i = 0; i < inputString.length; i++) {
         char ch = [inputString characterAtIndex:i];
         NSString *tempChar = [NSString stringWithFormat:@"%c", ch];
         //操作数，直接输出
         if (![self isOperator:tempChar]){
+            // k 记录数字位数并存到 opndDigits
+            int k = 1;
             NSLog(@"i = %lu  : %@", (unsigned long)i, tempChar);
             postfixNotation = [postfixNotation stringByAppendingString:tempChar];
-//            //继续往后面读取，若是数字则输出到后缀表达式中
-//            NSUInteger j = i + 1;
-//            while (j < inputString.length) {
-//                char nextCh = [inputString characterAtIndex:j];
-//                NSString *nextChar = [NSString stringWithFormat:@"%c", nextCh];
-//                //下一个还是操作数
-//                if (![self isOperator:nextChar]){
-//                    postfixNotation = [postfixNotation stringByAppendingString:nextChar];
-//                    j++;
-//                    i++;
-//                }
-//                else
-//                    break;
-//            }
+            //继续往后面读取，若是数字则输出到后缀表达式中
+            NSUInteger j = i + 1;
+            while (j < inputString.length) {
+                char nextCh = [inputString characterAtIndex:j];
+                NSString *nextChar = [NSString stringWithFormat:@"%c", nextCh];
+                //下一个还是操作数
+                if (![self isOperator:nextChar]){
+                    postfixNotation = [postfixNotation stringByAppendingString:nextChar];
+                    j++;i++;k++;
+                }
+                else
+                    break;
+            }
+            //基本类型 int 不能直接存入 NSMutableArray
+            NSNumber *num = [NSNumber numberWithInt:k];
+            [opndDigits addObject:num];
         }
         else{
             //左括号，直接压入堆栈
@@ -123,16 +129,21 @@
             else {
                 //将该栈顶运算符与运算符进行比较
                 NSString *pr = [self comparePriority:[_optrStack top] outOptr:tempChar];
-                NSLog(@"i = %-3.lu: (栈顶) %@ %@ %@ (栈外)", (unsigned long)i, [_optrStack top], pr, tempChar);
                 //如果栈顶运算符优先级低于栈外，压入栈
-                if ([pr isEqualToString:@"<"])
+                if ([pr isEqualToString:@"<"]){
+                    NSLog(@"i = %-3.lu: (栈顶) %@ %@ %@ (栈外)", (unsigned long)i, [_optrStack top], pr, tempChar);
                     [_optrStack push:tempChar];
-                //如果栈顶运算符优先级高于等于栈外，弹出栈顶运算符，直到栈顶运算符优先级小于栈外或者栈空，再将该运算符入栈
+                }
+                //如果栈顶运算符优先级高于等于栈外，弹出栈顶运算符并输出，直到栈顶运算符优先级小于栈外或者栈空，再将该运算符入栈
                 else {
                     postfixNotation = [postfixNotation stringByAppendingString:[_optrStack pop]];
+                    NSLog(@"i = %-3.lu: (栈顶) %@ %@ %@ (栈外)", (unsigned long)i, [_optrStack top], pr, tempChar);
                     NSString *prLoop = [self comparePriority:[_optrStack top] outOptr:tempChar];
-                    while ([prLoop isEqualToString:@">"] && ![_optrStack isEmpty])
+                    while ([prLoop isEqualToString:@">"] && ![_optrStack isEmpty]){
                         postfixNotation = [postfixNotation stringByAppendingString:[_optrStack pop]];
+                        prLoop = [self comparePriority:[_optrStack top] outOptr:tempChar];
+                        NSLog(@"i = %-3.lu: (栈顶) %@ %@ %@ (栈外)", (unsigned long)i, [_optrStack top], pr, tempChar);
+                    }
                     [_optrStack push:tempChar];
                 }
             }
@@ -143,61 +154,52 @@
         postfixNotation = [postfixNotation stringByAppendingString:[_optrStack pop]];
         NSLog(@"后缀表达式：%@",postfixNotation);
     }
-
-//    for (NSUInteger i = 0; i < inputString.length; i++) {
-//        char ch = [inputString characterAtIndex:i];
-//        NSString *tempChar = [NSString stringWithFormat:@"%c", ch];
-//
-//        //当前字符为等号或者栈顶元素为等号
-//        if (([tempChar isEqualToString:@"="]) && ([[_optrStack top] isEqualToString:@"="]) ) {
-//            break;
-//        }
-//        //当前字符为运算符
-//        else if ([self isOperator:tempChar]){
-//            NSString *pr = [self comparePriority:[_optrStack top] outOptr:tempChar];
-//            //优先级高于栈顶运算符则压入堆栈
-//            if([pr isEqualToString:@"<"])
-//                [_optrStack push:tempChar];
-//            else if([pr isEqualToString:@"="])
-//                bracket = [_optrStack pop];
-//            else{
-//                i--;
-//                oper = [_optrStack pop];
-//                value2 = [_opndStack pop];
-//                value1 = [_opndStack pop];
-//
-//                double a = [value1 doubleValue];
-//                double b = [value2 doubleValue];
-//
-//                double c = [self calculate:a opnd2:b optr:oper];
-//                NSNumber *num = [[NSNumber alloc] initWithDouble:c];
-//                NSString *result = [num stringValue];
-//                [_opndStack push:result];
-//            }
-//        }
-//        //当前字符为操作数
-//        else{
-//            //判断下一个字符
-//            NSUInteger j = i + 1;
-//            if (j<[inputString length]) {
-//                char nextch = [inputString characterAtIndex:j];
-//                NSString *nextstr = [NSString stringWithFormat:@"%c", nextch];
-//                //下一个还是操作数
-//                if(![self isOperator:nextstr])
-//                    continue;
-//                else{
-//                    [_opndStack push:[_opndArray firstObject]];
-//                    [_opndArray removeObjectAtIndex:0];
-//                }
-//            }
-//            else{
-//                [_opndStack push:[_opndArray firstObject]];
-//                [_opndArray removeObjectAtIndex:0];
-//            }
-//        }
-//    }
     
-    NSString *expResult = [_opndStack top];
+    NSUInteger j = 0;// opndDigits 下标（控制每次存到栈中操作数的位数）
+    
+    //遍历后缀表达式计算结果
+    for (NSUInteger i = 0; i < postfixNotation.length; i++) {
+        char ch = [postfixNotation characterAtIndex:i];
+        NSString *tempChar = [NSString stringWithFormat:@"%c", ch];
+        
+        // 遇到运算符则弹出两个操作数
+        NSString *opnd1 = @"";
+        NSString *opnd2 = @"";
+        
+        //如果是操作数，存入栈
+        if (![self isOperator:tempChar]){
+            NSString *tempNum = @"";
+            tempNum = [tempNum stringByAppendingString:tempChar];
+            
+            //判断是否有多位数字
+            NSNumber *digitNSNumber = opndDigits[j];
+            NSUInteger digit = [digitNSNumber integerValue];//读出 opndDigits 中的位数并转为 int
+            while (digit - 1) {
+                i++;
+                char nextCh = [postfixNotation characterAtIndex:i];
+                NSString *nextNum = [NSString stringWithFormat:@"%c", nextCh];
+                //往后读数字并存到tempNum
+                tempNum = [tempNum stringByAppendingString:nextNum];
+                digit--;
+            }
+            j++;
+            NSLog(@"tempNum %@", tempNum);
+            //把数字压入栈中
+            [_postfixStack push:tempNum];
+        }
+        else {
+            opnd2 = [_postfixStack pop];
+            opnd1 = [_postfixStack pop];
+            
+            NSDecimalNumber *decNumber1 = [NSDecimalNumber decimalNumberWithString:opnd1];
+            NSDecimalNumber *decNumber2 = [NSDecimalNumber decimalNumberWithString:opnd2];
+            double tempResult = [self calculate:[decNumber1 doubleValue] opnd2:[decNumber2 doubleValue] optr:tempChar];
+            [_postfixStack push:[NSString stringWithFormat:@"%.3f", tempResult]];
+        }
+    }
+    
+    
+    NSString *expResult = [_postfixStack top];
     return expResult;
 }
 

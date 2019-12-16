@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Arithmetic *h = [[Arithmetic alloc] init];
-        NSString *expression = @"(2+9)/3-5";
+        NSString *expression = @"20*(9+6/3-5)+4";
         NSString *result = [h ExpressionCalculate: expression];
         NSLog(@"%@", result);
     }

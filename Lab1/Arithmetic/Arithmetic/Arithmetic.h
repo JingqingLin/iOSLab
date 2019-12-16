@@ -16,10 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSMutableArray *optrArray;
 @property (nonatomic, strong)NSMutableArray *opndArray;
 //操作数栈和运算符栈
-@property(nonatomic, strong)Stack *opndStack;
+@property (nonatomic, strong)Stack *opndStack;
 @property (nonatomic) NSUInteger opndSize;
-@property(nonatomic, strong)Stack *optrStack;
+@property (nonatomic, strong)Stack *optrStack;
 @property (nonatomic) NSUInteger optrSize;
+@property (nonatomic, strong)Stack *postfixStack;
 
 -(NSArray *)validOperator;
 //栈内优先级
