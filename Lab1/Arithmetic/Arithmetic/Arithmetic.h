@@ -13,14 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Arithmetic : NSObject
 
-@property (nonatomic, strong)NSMutableArray *optrArray;
-@property (nonatomic, strong)NSMutableArray *opndArray;
-//操作数栈和运算符栈
-@property (nonatomic, strong)Stack *opndStack;
-@property (nonatomic) NSUInteger opndSize;
+//运算符栈（前缀转后缀时存储运算符）
 @property (nonatomic, strong)Stack *optrStack;
-@property (nonatomic) NSUInteger optrSize;
-@property (nonatomic, strong)Stack *postfixStack;
+//操作数栈（计算后缀表达式时存储操作数）
+@property (nonatomic, strong)Stack *opndStack;
 
 -(NSArray *)validOperator;
 //栈内优先级
