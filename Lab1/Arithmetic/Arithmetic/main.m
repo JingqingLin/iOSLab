@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Arithmetic *h = [[Arithmetic alloc] init];
-        NSString *expression = @"10/1*7+15/8-8";
+        NSString *expression = @"(2+9)/3-5";
         NSString *result = [h ExpressionCalculate: expression];
         NSLog(@"%@", result);
     }
