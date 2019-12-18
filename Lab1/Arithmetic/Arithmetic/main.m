@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Arithmetic *a = [[Arithmetic alloc] init];
         NSLog(@"Start!");
-        NSString *expression = @"+10--1/1-8";
+        NSString *expression = @"-10-(-1/1)*-8";
         NSString *result = [a ExpressionCalculate: expression];
         if([result isEqualToString:@"Nah"] || [result isEqualToString:@"字符串不是数学表达式无法计算"]){
             NSLog(@"%@", result);

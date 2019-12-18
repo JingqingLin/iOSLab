@@ -73,7 +73,7 @@ BOOL flag = YES;
                             return NO;
                         }
                         //负号能出现在任意运算符后面，但若再往下一位也是负号则NO
-                        if ([[NSString stringWithFormat:@"%c",[str characterAtIndex:(j+1)]] isEqualToString:@"-"]){
+                        if ([nextChar isEqualToString:@"-"] && [[NSString stringWithFormat:@"%c",[str characterAtIndex:(j+1)]] isEqualToString:@"-"]){
                             return NO;
                         }
                     }
@@ -170,7 +170,7 @@ BOOL flag = YES;
             [revisedString insertString:@"(" atIndex:(i)];
             i = i + 2;
         }
-        else if (([preChar isEqualToString:@"+"] || [preChar isEqualToString:@"-"] ||[preChar isEqualToString:@"*"] ||[preChar isEqualToString:@"/"] || [preChar isEqualToString:@"("]) && [tempChar isEqualToString:@"-"]){
+        else if (([preChar isEqualToString:@"+"] || [preChar isEqualToString:@"-"] ||[preChar isEqualToString:@"*"] ||[preChar isEqualToString:@"/"] || [preChar isEqualToString:@"("]) && ([tempChar isEqualToString:@"-"] || [tempChar isEqualToString:@"+"])){
             NSUInteger j = i + 1;
             while (j < revisedString.length) {
                 char nextCh = [revisedString characterAtIndex:j];
