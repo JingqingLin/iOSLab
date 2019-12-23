@@ -28,15 +28,26 @@
 
 - (NSString *)computedResult{
     @try {
-        NSExpression *exp1 = [NSExpression expressionWithFormat:self.disp];
-        id value = [exp1 expressionValueWithObject:nil context:nil];
+        if ([_disp containsString:@"/0"]) {
+            _disp = nil;
+            return @"Error";
+        }
+            
+        if ([_disp containsString:@"/"] && ![_disp containsString:@"."]) {
+            NSLog(@"YES");
+            NSRange range = NSMakeRange(0, [_disp length]);
+            [_disp replaceOccurrencesOfString:@"/" withString:@".0/" options:NSCaseInsensitiveSearch range:range];
+            NSLog(@"%@", _disp);
+        }
+        NSExpression *exp = [NSExpression expressionWithFormat:_disp];
+        id value = [exp expressionValueWithObject:nil context:nil];
         NSLog(@"result = %f", [value floatValue]);
         _disp = [NSMutableString stringWithString:[value stringValue]];
         return [value stringValue];
     }
     @catch (NSException *exception) {
         _disp = nil;
-        return @"error";
+        return @"Error";
     }
 }
 
