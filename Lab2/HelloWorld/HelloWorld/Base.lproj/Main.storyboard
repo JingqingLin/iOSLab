@@ -33,6 +33,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sayiOSWorldBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p0h-Sz-ITG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-oX-91Z" userLabel="ButtonLeft">
                                 <rect key="frame" x="47.5" y="549" width="80" height="36"/>
@@ -50,6 +53,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sayHelloWorldBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ndk-pO-E5E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYW-gF-Dxi" userLabel="ButtonRight">
                                 <rect key="frame" x="247.5" y="549" width="80" height="36"/>
@@ -67,19 +73,48 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="inputButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CGM-uB-NCU"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-Ib-uew">
+                                <rect key="frame" x="166.5" y="223" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7EE-4E-3sa">
+                                <rect key="frame" x="129.5" y="318.5" width="116.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iNK-4N-t64"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2zx-mF-cOx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-100" id="46i-sm-9aq"/>
                             <constraint firstItem="hYW-gF-Dxi" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-100" id="63f-LQ-SzW"/>
                             <constraint firstItem="hYW-gF-Dxi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="822-Q0-mMd"/>
+                            <constraint firstItem="7EE-4E-3sa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Acq-85-QWC"/>
                             <constraint firstItem="TZp-oX-91Z" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-100" id="Wsc-0B-aJT"/>
+                            <constraint firstItem="PLI-Ib-uew" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X32-4F-QnP"/>
+                            <constraint firstItem="7EE-4E-3sa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gZx-s1-u8z"/>
                             <constraint firstItem="TZp-oX-91Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="kZc-k0-upc"/>
                             <constraint firstItem="2zx-mF-cOx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sIB-5t-o1M"/>
+                            <constraint firstItem="PLI-Ib-uew" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="uui-3v-sNr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="centerBtn" destination="2zx-mF-cOx" id="Hmg-Sg-Rii"/>
+                        <outlet property="inputText" destination="7EE-4E-3sa" id="XwH-Dh-GRF"/>
+                        <outlet property="leftBtn" destination="TZp-oX-91Z" id="MTF-B1-Rfc"/>
+                        <outlet property="outputLabel" destination="PLI-Ib-uew" id="4cK-TA-f1p"/>
+                        <outlet property="rightBtn" destination="hYW-gF-Dxi" id="pXG-sF-l1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
