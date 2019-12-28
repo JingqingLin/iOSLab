@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Model/Calculator.h"
-#import "Model/Advanced.h"
+#import "Model/AdvancedCalculator.h"
 #import "AdvancedViewController.h"
 
 @interface ViewController ()
@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSub;
 @property (weak, nonatomic) IBOutlet UIButton *btnAdd;
 @property (weak, nonatomic) IBOutlet UILabel *txtDisplay;
-@property (strong, nonatomic) Advanced *cal;
+@property (strong, nonatomic) AdvancedCalculator *cal;
 
 @end
 
@@ -42,48 +42,57 @@
         [_cal.disp appendString:@"/"];
     else
         [_cal.disp appendString:[[sender titleLabel] text]];
-    
+
     [str appendString:[[sender titleLabel] text]];
-    _cal.screen = str;
     _txtDisplay.text = str;
+    _cal.screen = str;
 }
 
 - (IBAction)clear:(UIButton *)sender {
     _txtDisplay.text = @"";
+    _cal.screen = [NSMutableString stringWithString:_txtDisplay.text];
     [_cal clearDisp];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"AdvancedScene"]){
         if ([segue.destinationViewController isKindOfClass:[AdvancedViewController class]]){
             AdvancedViewController *avc = (AdvancedViewController *)segue.destinationViewController;
-            avc.advCal = _cal;
+            avc.cal = _cal;
         }
     }
 }
 
 - (IBAction)delNumber:(UIButton *)sender {
-    [_cal delNumber];
+    if ([_txtDisplay.text containsString:@"error"] ||  [_txtDisplay.text containsString:@"..."]) {
+        _txtDisplay.text = @"";
+        _cal.screen = [NSMutableString stringWithString:_txtDisplay.text];
+        [_cal clearDisp];
+    }
+    else
+        [_cal delNumber];
     _txtDisplay.text = _cal.screen;
 }
 
 - (IBAction)compute:(UIButton *)sender {
     _txtDisplay.text = _cal.computedResult;
+    _cal.screen = [NSMutableString stringWithString:_txtDisplay.text];
 }
 
-//- (void)viewWillAppear:(BOOL)animated{
-//    self.txtDisplay.text = _cal.screen;
-//}
+- (void)viewWillAppear:(BOOL)animated{
+    _txtDisplay.text = self.cal.screen;
+    NSLog(@"基本运算界面加载中...");
+}
 
-- (Advanced *)cal{
+- (AdvancedCalculator *)cal{
     if(!_cal)
-        _cal = [[Advanced alloc] init];
+        _cal = [[AdvancedCalculator alloc] init];
     return _cal;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cal = [[Advanced alloc] init];
+    _cal = [[AdvancedCalculator alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

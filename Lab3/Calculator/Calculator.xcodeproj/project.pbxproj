@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E293CAC23B7BE400078B066 /* Calculator+Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E293CAB23B7BE400078B066 /* Calculator+Health.m */; };
+		3E293CAF23B7BEC90078B066 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E293CAE23B7BEC90078B066 /* HealthViewController.m */; };
 		3E675E7923B0AA45006F0A71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675E7823B0AA45006F0A71 /* AppDelegate.m */; };
 		3E675E7C23B0AA45006F0A71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675E7B23B0AA45006F0A71 /* ViewController.m */; };
 		3E675E7F23B0AA45006F0A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E675E7D23B0AA45006F0A71 /* Main.storyboard */; };
@@ -16,7 +18,7 @@
 		3E675E9123B0AA47006F0A71 /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675E9023B0AA47006F0A71 /* CalculatorTests.m */; };
 		3E675E9C23B0AA47006F0A71 /* CalculatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675E9B23B0AA47006F0A71 /* CalculatorUITests.m */; };
 		3E675EAB23B0AAEE006F0A71 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675EAA23B0AAEE006F0A71 /* Calculator.m */; };
-		3E675EAF23B725A7006F0A71 /* Advanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675EAE23B725A7006F0A71 /* Advanced.m */; };
+		3E675EAF23B725A7006F0A71 /* AdvancedCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675EAE23B725A7006F0A71 /* AdvancedCalculator.m */; };
 		3E675EB523B744E9006F0A71 /* AdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E675EB423B744E9006F0A71 /* AdvancedViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E293CAA23B7BE400078B066 /* Calculator+Health.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculator+Health.h"; sourceTree = "<group>"; };
+		3E293CAB23B7BE400078B066 /* Calculator+Health.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Calculator+Health.m"; sourceTree = "<group>"; };
+		3E293CAD23B7BEC90078B066 /* HealthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthViewController.h; sourceTree = "<group>"; };
+		3E293CAE23B7BEC90078B066 /* HealthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthViewController.m; sourceTree = "<group>"; };
 		3E675E7423B0AA45006F0A71 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E675E7723B0AA45006F0A71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E675E7823B0AA45006F0A71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,8 +62,8 @@
 		3E675E9D23B0AA47006F0A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E675EA923B0AAEE006F0A71 /* Calculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		3E675EAA23B0AAEE006F0A71 /* Calculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
-		3E675EAD23B725A7006F0A71 /* Advanced.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Advanced.h; sourceTree = "<group>"; };
-		3E675EAE23B725A7006F0A71 /* Advanced.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Advanced.m; sourceTree = "<group>"; };
+		3E675EAD23B725A7006F0A71 /* AdvancedCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvancedCalculator.h; sourceTree = "<group>"; };
+		3E675EAE23B725A7006F0A71 /* AdvancedCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedCalculator.m; sourceTree = "<group>"; };
 		3E675EB323B744E9006F0A71 /* AdvancedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvancedViewController.h; sourceTree = "<group>"; };
 		3E675EB423B744E9006F0A71 /* AdvancedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,10 +118,12 @@
 			children = (
 				3E675E7723B0AA45006F0A71 /* AppDelegate.h */,
 				3E675E7823B0AA45006F0A71 /* AppDelegate.m */,
-				3E675EB323B744E9006F0A71 /* AdvancedViewController.h */,
-				3E675EB423B744E9006F0A71 /* AdvancedViewController.m */,
 				3E675E7A23B0AA45006F0A71 /* ViewController.h */,
 				3E675E7B23B0AA45006F0A71 /* ViewController.m */,
+				3E675EB323B744E9006F0A71 /* AdvancedViewController.h */,
+				3E675EB423B744E9006F0A71 /* AdvancedViewController.m */,
+				3E293CAD23B7BEC90078B066 /* HealthViewController.h */,
+				3E293CAE23B7BEC90078B066 /* HealthViewController.m */,
 				3E675E7D23B0AA45006F0A71 /* Main.storyboard */,
 				3E675E8023B0AA46006F0A71 /* Assets.xcassets */,
 				3E675E8223B0AA46006F0A71 /* LaunchScreen.storyboard */,
@@ -147,10 +155,12 @@
 		3E675EAC23B0AAF5006F0A71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3E675EAD23B725A7006F0A71 /* Advanced.h */,
-				3E675EAE23B725A7006F0A71 /* Advanced.m */,
+				3E675EAD23B725A7006F0A71 /* AdvancedCalculator.h */,
+				3E675EAE23B725A7006F0A71 /* AdvancedCalculator.m */,
 				3E675EA923B0AAEE006F0A71 /* Calculator.h */,
 				3E675EAA23B0AAEE006F0A71 /* Calculator.m */,
+				3E293CAA23B7BE400078B066 /* Calculator+Health.h */,
+				3E293CAB23B7BE400078B066 /* Calculator+Health.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,8 +299,10 @@
 				3E675E7C23B0AA45006F0A71 /* ViewController.m in Sources */,
 				3E675EAB23B0AAEE006F0A71 /* Calculator.m in Sources */,
 				3E675E8723B0AA46006F0A71 /* main.m in Sources */,
-				3E675EAF23B725A7006F0A71 /* Advanced.m in Sources */,
+				3E675EAF23B725A7006F0A71 /* AdvancedCalculator.m in Sources */,
 				3E675E7923B0AA45006F0A71 /* AppDelegate.m in Sources */,
+				3E293CAF23B7BEC90078B066 /* HealthViewController.m in Sources */,
+				3E293CAC23B7BE400078B066 /* Calculator+Health.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

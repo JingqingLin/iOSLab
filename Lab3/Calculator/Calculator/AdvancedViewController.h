@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Model/Advanced.h"
+#import "Model/AdvancedCalculator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AdvancedViewController : UIViewController
-@property (strong, nonatomic) Advanced *advCal;
+@property (strong, nonatomic) AdvancedCalculator *cal;
 @end
 
 NS_ASSUME_NONNULL_END

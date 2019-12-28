@@ -12,10 +12,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Advanced : Calculator
+@interface AdvancedCalculator : Calculator
 @property (strong, nonatomic)NSMutableString *screen;
 
 - (NSString *)sqrt:(NSString *) content;
+- (NSString *)abs:(NSString *) content;
+- (NSString *)inverse:(NSString *) content;
+- (NSString *)power2:(NSString *) content;
 @end
 
 NS_ASSUME_NONNULL_END

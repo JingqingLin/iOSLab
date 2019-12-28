@@ -29,8 +29,8 @@
 - (NSString *)computedResult{
     @try {
         if ([_disp containsString:@"/0"]) {
-            _disp = [NSMutableString stringWithString:@"Error"];
-            return @"Error";
+            _disp = [NSMutableString stringWithString:@"error"];
+            return @"error";
         }
         if ([_disp containsString:@"/"] && ![_disp containsString:@"."]) {
             NSRange range = NSMakeRange(0, [_disp length]);
@@ -43,13 +43,13 @@
         return [value stringValue];
     }
     @catch (NSException *exception) {
-        _disp = [NSMutableString stringWithString:@"Error"];
-        return @"Error";
+        _disp = [NSMutableString stringWithString:@"error"];
+        return @"error";
     }
 }
 
 - (void)clearDisp{
-    _disp = nil;
+    _disp = [NSMutableString stringWithString:@""];
 }
 
 @end
