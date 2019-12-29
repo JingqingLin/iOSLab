@@ -14,6 +14,18 @@
 
 @implementation AppDelegate
 
+-(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController *tabbarVC = [story instantiateViewControllerWithIdentifier:@"tabbarVC"];
+    if ([shortcutItem.type isEqualToString:@"CalculatorOpen"]) {
+        [tabbarVC setSelectedIndex:1];
+        [self.window.rootViewController presentViewController:tabbarVC animated:NO completion:nil];
+    }
+    else {
+        [tabbarVC setSelectedIndex:0];
+        [self.window.rootViewController presentViewController:tabbarVC animated:NO completion:nil];
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
