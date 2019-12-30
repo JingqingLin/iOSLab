@@ -49,6 +49,91 @@
     return [n stringValue];
 }
 
+- (NSString *)sin:(NSString *)content {
+    double d = [content doubleValue];
+    double result = sin(d);
+    NSLog(@"sin(%lf) = %lf", d, result);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)cos:(NSString *)content {
+    double d = [content doubleValue];
+    double result = cos(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)tan:(NSString *)content {
+    double d = [content doubleValue];
+    double result = tan(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)power3:(NSString *)content {
+    double d = [content doubleValue];
+    double result = d * d * d;
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)asin:(NSString *)content {
+    double d = [content doubleValue];
+    double result = asin(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)acos:(NSString *)content {
+    double d = [content doubleValue];
+    double result = acos(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)atan:(NSString *)content {
+    double d = [content doubleValue];
+    double result = atan(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)ln:(NSString *)content {
+    double d = [content doubleValue];
+    double result = log(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)sinh:(NSString *)content {
+    double d = [content doubleValue];
+    double result = sinh(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)cosh:(NSString *)content {
+    double d = [content doubleValue];
+    double result = cosh(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)tanh:(NSString *)content {
+    double d = [content doubleValue];
+    double result = tanh(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
+- (NSString *)log:(NSString *)content {
+    double d = [content doubleValue];
+    double result = log10(d);
+    NSNumber *n = [[NSNumber alloc] initWithDouble:result];
+    return [n stringValue];
+}
+
 //覆盖父类方法
 - (void) delNumber {
     long len = self.disp.length - 1;

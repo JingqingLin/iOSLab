@@ -19,6 +19,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)abs:(NSString *) content;
 - (NSString *)inverse:(NSString *) content;
 - (NSString *)power2:(NSString *) content;
+- (NSString *)sin:(NSString *) content;
+- (NSString *)cos:(NSString *) content;
+- (NSString *)tan:(NSString *) content;
+- (NSString *)power3:(NSString *) content;
+- (NSString *)asin:(NSString *) content;
+- (NSString *)acos:(NSString *) content;
+- (NSString *)atan:(NSString *) content;
+- (NSString *)ln:(NSString *) content;
+- (NSString *)sinh:(NSString *) content;
+- (NSString *)cosh:(NSString *) content;
+- (NSString *)tanh:(NSString *) content;
+- (NSString *)log:(NSString *) content;
 @end
 
 NS_ASSUME_NONNULL_END

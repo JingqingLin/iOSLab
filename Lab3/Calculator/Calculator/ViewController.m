@@ -36,16 +36,18 @@
 
 - (IBAction)inputNumber:(UIButton *)sender {
     NSMutableString *str = [NSMutableString stringWithString:_txtDisplay.text];
-    if([[[sender titleLabel] text] isEqualToString:@"×"])
-        [_cal.disp appendString:@"*"];
-    else if([[[sender titleLabel] text] isEqualToString:@"÷"])
-        [_cal.disp appendString:@"/"];
-    else
-        [_cal.disp appendString:[[sender titleLabel] text]];
-
-    [str appendString:[[sender titleLabel] text]];
-    _txtDisplay.text = str;
-    _cal.screen = str;
+    if (str.length < 24) {
+        if([[[sender titleLabel] text] isEqualToString:@"×"])
+            [_cal.disp appendString:@"*"];
+        else if([[[sender titleLabel] text] isEqualToString:@"÷"])
+            [_cal.disp appendString:@"/"];
+        else
+            [_cal.disp appendString:[[sender titleLabel] text]];
+        
+        [str appendString:[[sender titleLabel] text]];
+        _txtDisplay.text = str;
+        _cal.screen = str;
+    }
 }
 
 - (IBAction)clear:(UIButton *)sender {
