@@ -13,6 +13,8 @@
 		3E07D5A423BF6DE900DCACED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E07D5A323BF6DE900DCACED /* Assets.xcassets */; };
 		3E07D5A723BF6DE900DCACED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E07D5A523BF6DE900DCACED /* LaunchScreen.storyboard */; };
 		3E07D5AA23BF6DE900DCACED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E07D5A923BF6DE900DCACED /* main.m */; };
+		3E07D5B223BF6EFD00DCACED /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E07D5B123BF6EFD00DCACED /* Student.m */; };
+		3E07D5B623BF76D300DCACED /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E07D5B523BF76D300DCACED /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		3E07D5A623BF6DE900DCACED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E07D5A823BF6DE900DCACED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E07D5A923BF6DE900DCACED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E07D5B023BF6EFD00DCACED /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		3E07D5B123BF6EFD00DCACED /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		3E07D5B423BF76D300DCACED /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		3E07D5B523BF76D300DCACED /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +69,24 @@
 				3E07D59D23BF6DE800DCACED /* ViewController.h */,
 				3E07D59E23BF6DE800DCACED /* ViewController.m */,
 				3E07D5A023BF6DE800DCACED /* Main.storyboard */,
+				3E07D5B323BF6F1D00DCACED /* Model */,
 				3E07D5A323BF6DE900DCACED /* Assets.xcassets */,
 				3E07D5A523BF6DE900DCACED /* LaunchScreen.storyboard */,
 				3E07D5A823BF6DE900DCACED /* Info.plist */,
 				3E07D5A923BF6DE900DCACED /* main.m */,
+				3E07D5B423BF76D300DCACED /* TableViewController.h */,
+				3E07D5B523BF76D300DCACED /* TableViewController.m */,
 			);
 			path = StudentsScore;
+			sourceTree = "<group>";
+		};
+		3E07D5B323BF6F1D00DCACED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E07D5B023BF6EFD00DCACED /* Student.h */,
+				3E07D5B123BF6EFD00DCACED /* Student.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +162,8 @@
 				3E07D59F23BF6DE800DCACED /* ViewController.m in Sources */,
 				3E07D5AA23BF6DE900DCACED /* main.m in Sources */,
 				3E07D59C23BF6DE800DCACED /* AppDelegate.m in Sources */,
+				3E07D5B623BF76D300DCACED /* TableViewController.m in Sources */,
+				3E07D5B223BF6EFD00DCACED /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

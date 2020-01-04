@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<UISearchBarDelegate>
+@property(strong, nonatomic) NSMutableArray *students;
+@property(strong, nonatomic) NSIndexPath *indexPath;
+@property(strong, nonatomic) NSString *path;
 
 @end
 
