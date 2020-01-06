@@ -15,6 +15,8 @@
 @property (strong, nonatomic) Student *student;
 @property (strong, nonatomic) NSString *path;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addItemButton;
+
 @end
 
 @implementation TableViewController
@@ -153,6 +155,7 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [_addItemButton setEnabled:NO];
     NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     self.path = [doc stringByAppendingPathComponent:@"students.plist"];
     NSMutableArray *dataArray =[NSMutableArray arrayWithContentsOfFile:self.path];
@@ -171,6 +174,7 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [_addItemButton setEnabled:YES];
     NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     self.path = [doc stringByAppendingPathComponent:@"students.plist"];
     NSMutableArray *dataArray =[NSMutableArray arrayWithContentsOfFile:self.path];

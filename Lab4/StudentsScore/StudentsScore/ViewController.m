@@ -38,25 +38,50 @@
 
 - (IBAction)dataSave:(UIButton *)sender {
     TableViewController *tc = [[TableViewController alloc]init];
-    Student *student = [[Student alloc]init];
-    student.name = _txtName.text;
-    student.number = _txtID.text;
-    student.age = [_txtAge.text floatValue];
-    student.score = [_txtScore.text floatValue];
-    student.memo = _txtMemo.text;
-    student.teacher = @"Tian Bai";
+    //flag记录成绩是否合法
+    BOOL flag = YES;
+    if ([_txtScore.text floatValue] < 0)
+        flag = NO;
+    for (int i = 0;i < _txtScore.text.length;i++) {
+        char ch = [_txtScore.text characterAtIndex:i];
+        NSString *temp = [NSString stringWithFormat:@"%c",ch];
+        if (![temp containsString:@"0"] &&![temp containsString:@"1"] &&![temp containsString:@"2"] &&![temp containsString:@"3"] &&![temp containsString:@"4"] &&![temp containsString:@"5"] &&![temp containsString:@"6"] &&![temp containsString:@"7"] &&![temp containsString:@"8"] &&![temp containsString:@"9"])
+        {
+            flag = NO;
+        }
+    }
     
-    if (_indexPath == nil) {
-        [_students addObject:student];
-        [tc writeToFile:_students filepath:_path];
+    if (flag == NO)
+    {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"请输入正确的成绩" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            self.txtScore.text = @"";
+        }];
+        [alertController addAction: okAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
     else {
-        //修改数据
-        _students[_indexPath.row] = student;
-        //数据写入，writeToFile 必须为 public
-        [tc writeToFile:_students filepath:_path];
+        Student *student = [[Student alloc]init];
+        student.name = _txtName.text;
+        student.number = _txtID.text;
+        student.age = [_txtAge.text floatValue];
+        student.score = [_txtScore.text floatValue];
+        student.memo = _txtMemo.text;
+        student.teacher = @"Tian Bai";
+        
+        if (_indexPath == nil) {
+            [_students addObject:student];
+            [tc writeToFile:_students filepath:_path];
+        }
+        else {
+            //修改数据
+            _students[_indexPath.row] = student;
+            //数据写入，writeToFile 必须为 public
+            [tc writeToFile:_students filepath:_path];
+        }
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
-    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 - (IBAction)dataCancel:(UIButton *)sender {
     _txtID = nil;
