@@ -17,51 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueq-pn-5k7">
-                                <rect key="frame" x="67" y="35" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SrV-Qj-htq">
+                                <rect key="frame" x="67" y="27" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="SW7-gi-A4g" appends="YES" id="rhp-re-quO"/>
+                                    <outletCollection property="gestureRecognizers" destination="d6H-BY-Stv" appends="YES" id="3fP-8N-6Qt"/>
                                 </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-Wp-9g8">
-                                <rect key="frame" x="67" y="171" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="xa6-Es-tRW" appends="YES" id="WMu-BQ-CjZ"/>
-                                </connections>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6S8-GT-RJd">
-                                <rect key="frame" x="117" y="617" width="140" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-8m-xdp">
+                                <rect key="frame" x="92" y="617" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LpK-nW-EOA">
+                                <rect key="frame" x="67" y="163" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Tfv-uI-3Ld" appends="YES" id="7ah-bk-jtc"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="SA19225242_imgView1" destination="ueq-pn-5k7" id="wUi-Es-5YA"/>
-                        <outlet property="SA19225242_imgView2" destination="qK8-Wp-9g8" id="LD7-2y-ccE"/>
-                        <outlet property="SA19225242_txtDisp" destination="6S8-GT-RJd" id="ol6-AH-V3N"/>
+                        <outlet property="SA242_imgView1" destination="SrV-Qj-htq" id="BLz-z7-MPh"/>
+                        <outlet property="SA242_imgView2" destination="LpK-nW-EOA" id="a7H-Ux-uE3"/>
+                        <outlet property="SA242_txt" destination="nlG-8m-xdp" id="b1g-o0-oyr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="SW7-gi-A4g">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="d6H-BY-Stv">
                     <connections>
-                        <action selector="pan1:" destination="BYZ-38-t0r" id="kX6-5b-kpC"/>
+                        <action selector="pan1:" destination="BYZ-38-t0r" id="B3b-DO-JHO"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="xa6-Es-tRW">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Tfv-uI-3Ld">
                     <connections>
-                        <action selector="pan2:" destination="BYZ-38-t0r" id="JIu-pF-xtE"/>
+                        <action selector="pan2:" destination="BYZ-38-t0r" id="b06-Dd-hTA"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="132" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
