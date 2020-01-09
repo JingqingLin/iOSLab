@@ -1,6 +1,6 @@
 //
-//  drawRect.h
-//  SA19225242_imageMatching
+//  TableViewController.h
+//  SA19225242_sseNews
 //
 //  Created by 林靖清 on 2020/1/9.
 //  Copyright © 2020 USTC. All rights reserved.
@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface drawRect : UIView
-- (void)draw:(CGRect)rectangle;
+@interface TableViewController : UITableViewController
+- (void)writeToFile:(NSMutableArray *)n filepath:(NSString*)path;
 @end
 
 NS_ASSUME_NONNULL_END

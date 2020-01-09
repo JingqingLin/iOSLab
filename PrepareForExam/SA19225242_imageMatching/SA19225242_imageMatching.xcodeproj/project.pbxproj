@@ -13,7 +13,7 @@
 		3E8CAF4523C6B32B00BAB36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CAF4423C6B32B00BAB36A /* Assets.xcassets */; };
 		3E8CAF4823C6B32B00BAB36A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CAF4623C6B32B00BAB36A /* LaunchScreen.storyboard */; };
 		3E8CAF4B23C6B32B00BAB36A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8CAF4A23C6B32B00BAB36A /* main.m */; };
-		3E8CAF5623C6BD6A00BAB36A /* drawRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8CAF5523C6BD6A00BAB36A /* drawRect.m */; };
+		3EADB43523C6E33300F0DFED /* drawRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADB43323C6E33300F0DFED /* drawRect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		3E8CAF4723C6B32B00BAB36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E8CAF4923C6B32B00BAB36A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E8CAF4A23C6B32B00BAB36A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3E8CAF5423C6BD6A00BAB36A /* drawRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = drawRect.h; path = ../drawRect.h; sourceTree = "<group>"; };
-		3E8CAF5523C6BD6A00BAB36A /* drawRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = drawRect.m; path = ../drawRect.m; sourceTree = "<group>"; };
+		3EADB43323C6E33300F0DFED /* drawRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawRect.m; sourceTree = "<group>"; };
+		3EADB43423C6E33300F0DFED /* drawRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawRect.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +66,8 @@
 				3E8CAF3E23C6B32A00BAB36A /* ViewController.h */,
 				3E8CAF3F23C6B32A00BAB36A /* ViewController.m */,
 				3E8CAF4123C6B32A00BAB36A /* Main.storyboard */,
-				3E8CAF5423C6BD6A00BAB36A /* drawRect.h */,
-				3E8CAF5523C6BD6A00BAB36A /* drawRect.m */,
+				3EADB43423C6E33300F0DFED /* drawRect.h */,
+				3EADB43323C6E33300F0DFED /* drawRect.m */,
 				3E8CAF4423C6B32B00BAB36A /* Assets.xcassets */,
 				3E8CAF4623C6B32B00BAB36A /* LaunchScreen.storyboard */,
 				3E8CAF4923C6B32B00BAB36A /* Info.plist */,
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8CAF4023C6B32A00BAB36A /* ViewController.m in Sources */,
-				3E8CAF5623C6BD6A00BAB36A /* drawRect.m in Sources */,
+				3EADB43523C6E33300F0DFED /* drawRect.m in Sources */,
 				3E8CAF4B23C6B32B00BAB36A /* main.m in Sources */,
 				3E8CAF3D23C6B32A00BAB36A /* AppDelegate.m in Sources */,
 			);

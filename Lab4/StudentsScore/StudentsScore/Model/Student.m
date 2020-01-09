@@ -23,12 +23,12 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if(self=[super init]){
-        self.name=[aDecoder decodeObjectForKey:@"name"];
-        self.number=[aDecoder decodeObjectForKey:@"number"];
-        self.age=[aDecoder decodeIntegerForKey:@"age"];
-        self.score=[aDecoder decodeFloatForKey:@"score"];
-        self.memo=[aDecoder decodeObjectForKey:@"memo"];
-        self.teacher=[aDecoder decodeObjectForKey:@"teacher"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.number = [aDecoder decodeObjectForKey:@"number"];
+        self.age = [aDecoder decodeIntegerForKey:@"age"];
+        self.score = [aDecoder decodeFloatForKey:@"score"];
+        self.memo = [aDecoder decodeObjectForKey:@"memo"];
+        self.teacher = [aDecoder decodeObjectForKey:@"teacher"];
     }
     return self;
 }
