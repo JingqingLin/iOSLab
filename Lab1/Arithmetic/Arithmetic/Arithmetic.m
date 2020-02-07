@@ -195,7 +195,7 @@ BOOL flag = YES;
     
     NSString *postfixNotation = @"";
     NSMutableArray *opndDigits = [NSMutableArray array];
-    //前缀转后缀
+    //中缀转后缀
     for (NSUInteger i = 0; i < revisedString.length; i++) {
         char ch = [revisedString characterAtIndex:i];
         NSString *tempChar = [NSString stringWithFormat:@"%c", ch];
